@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1  Subscriber  Details
+  ul
+    li  first_name: #{first_name}
+    li  last_name:  #{last_name}
+    li  Email:  #{email}
+  ul
+    each post, i in posts
+        li
+          a(class="edit" href="/edit/#{id}/#{post}") #{post}
+            button(type="button") Edit
+  form(name='pubish', method='post', action='/subscriber')
+    div
+      input#inputPost(type='text', placeholder='publish post', name='post')
+    div
+      button#btnSignup(type='submit') Publish!

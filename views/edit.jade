@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Edit Post
+  form(name='edit', method='post', action='/edit')
+    div
+      input#inputPost(type='text', placeholder='Edit post', name='post', value=post)
+    div
+        input(type='hidden', name='id', value='#{id}')
+        button#btnSubmit(type='submit') Edit

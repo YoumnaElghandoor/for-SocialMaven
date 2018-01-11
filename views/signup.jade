@@ -1,0 +1,14 @@
+extends layout
+block content
+  h1 Subscribe now
+  form(name='signup', method='post', action='/signup')
+    div
+      input#inputemail(type='text', placeholder='Add Email', name='email')
+    div
+      input#inputFirstName(type='text',placeholder='Add first name', name='first_name')
+    div
+      input#inputLastName(type='text',placeholder='Add last name', name='last_name')
+    div
+      input#inputPost(type='text',placeholder='Add post', name='post')
+    div
+      button#btnSignup(type='submit') Signup!
