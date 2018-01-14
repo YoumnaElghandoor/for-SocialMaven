@@ -5,6 +5,9 @@ block content
   ul
     each subscriber, i in subscribers
         li
-          a(href="/subscriber/#{subscriber.id}") #{subscriber.email}
-
-  a(href='/signup') Signup        
+          a(href="/subscriber/#{subscriber.id}") #{subscriber.first_name}
+  a(href='/auth/facebook') Login with Facebook
+  |<br><br>
+  a(href='/signup') Signup
+  |<br><br>
+  a(href='/logout') Logout

@@ -2,17 +2,20 @@ extends layout
 
 block content
   h1  Subscriber  Details
+  |<br><br>
+  a(href='/') Home 
   ul
     li  first_name: #{first_name}
     li  last_name:  #{last_name}
     li  Email:  #{email}
+    li  ID:     #{id}
   ul
     each post, i in posts
         li
-          a(class="edit" href="/edit/#{id}/#{post}") #{post}
-            button(type="button") Edit
-  form(name='pubish', method='post', action='/subscriber')
+          a(class="delete" href="/delete/#{id}/#{post}") #{post}
+            button(type="button") Delete
+  form(name='pubish', method='post')
     div
-      input#inputPost(type='text', placeholder='publish post', name='post')
+      input#inputPost(type='text', placeholder='publish post', name='post', action="/publishPost/#{id}")
     div
       button#btnSignup(type='submit') Publish!
